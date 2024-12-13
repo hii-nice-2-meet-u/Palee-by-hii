@@ -2,9 +2,10 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /*
  *
- *	File	:	HanumanLT.h
+ *	File	:	Palee.h
+ *	Release		:	v1.0.1
  *
- *	Created on	:	Sat 30 Oct 2024
+ *	Created on	:	Fri 13 Dec 2024
  *		Author	:	hii-nice-2-meet-u
  *
  */
@@ -43,8 +44,47 @@ void wait_swOK_unPress(void)
 #define wait_OK_unPress(void) wait_swOK_unPress(void)
 
 #define OK(void) \
-	wait_swOK();   \
+	wait_swOK(); \
 	wait_swOK_unPress();
+
+//* --------------------------------
+//` ================================================================ #ffffff
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//` LED Ctrl
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//` ================================================================ #ffffff
+//* --------------------------------
+
+//$ Function initialize LED
+void _init_LED(void)
+{
+	pinMode(Pin_LED_RED, OUTPUT);
+	pinMode(Pin_LED_GREEN, OUTPUT);
+}
+
+//* --------------------------------
+
+#define __LED_RED_ON digitalWrite(Pin_LED_RED, HIGH)
+#define __LED_RED_OFF digitalWrite(Pin_LED_GREEN, LOW)
+
+#define __LED_GREEN_ON digitalWrite(Pin_LED_RED, HIGH)
+#define __LED_GREEN_OFF digitalWrite(Pin_LED_GREEN, LOW)
+
+//* --------------------------------
+
+void blink_RED(int duration = 100)
+{
+	__LED_RED_ON;
+	delay(duration);
+	__LED_RED_OFF;
+}
+
+void blink_GREEN(int duration = 100)
+{
+	__LED_GREEN_ON;
+	delay(duration);
+	__LED_GREEN_OFF;
+}
 
 //* --------------------------------
 //` ================================================================ #ffffff

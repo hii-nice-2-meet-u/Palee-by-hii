@@ -16,9 +16,11 @@
 #define D14 14
 #define D15 15
 
-#define MA_IN1	D9
-#define MA_IN2	D6
-#define MB_IN1	D13
-#define MB_IN2	D10
+#define MA_IN1 D9
+#define MA_IN2 D6
+#define MB_IN1 D13
+#define MB_IN2 D10
 
 #define Pin_swOK D7
+#define Pin_LED_RED D4
+#define Pin_LED_GREEN D8
