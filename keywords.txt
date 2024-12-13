@@ -1,0 +1,15 @@
+
+#######################################
+# Methods and Functions
+#######################################	
+
+wait_swOK KEYWORD2
+wait_OK KEYWORD2
+wait_swOK_unPress KEYWORD2
+wait_OK_unPress KEYWORD2
+
+_init_Motor KEYWORD2
+Motor_MA KEYWORD2
+Motor_MB KEYWORD2
+Motor KEYWORD2
+MotorStop KEYWORD2
