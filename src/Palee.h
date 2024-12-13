@@ -65,9 +65,9 @@ void _init_LED(void)
 //* --------------------------------
 
 #define __LED_RED_ON digitalWrite(Pin_LED_RED, HIGH)
-#define __LED_RED_OFF digitalWrite(Pin_LED_GREEN, LOW)
+#define __LED_RED_OFF digitalWrite(Pin_LED_RED, LOW)
 
-#define __LED_GREEN_ON digitalWrite(Pin_LED_RED, HIGH)
+#define __LED_GREEN_ON digitalWrite(Pin_LED_GREEN, HIGH)
 #define __LED_GREEN_OFF digitalWrite(Pin_LED_GREEN, LOW)
 
 //* --------------------------------
@@ -178,6 +178,7 @@ void Motor(void)
 void initVariant(void)
 {
 	pinMode(Pin_swOK, INPUT);
+	_init_LED();
 	_init_Motor();
 }
 
