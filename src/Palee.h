@@ -35,12 +35,16 @@ void wait_swOK(void)
 
 void wait_swOK_unPress(void)
 {
-	while (!digitalRead(Pin_swOK))
+	while (digitalRead(Pin_swOK))
 		;
 }
 
-#define wait_OK wait_swOK
-#define wait_OK_unPress wait_swOK_unPress
+#define wait_OK(void) wait_swOK(void)
+#define wait_OK_unPress(void) wait_swOK_unPress(void)
+
+#define OK(void) \
+	wait_swOK();   \
+	wait_swOK_unPress();
 
 //* --------------------------------
 //` ================================================================ #ffffff
@@ -68,13 +72,13 @@ void Motor_MA(short Speed)
 	}
 	if (Speed < 0)
 	{
-		analogWrite(MA_IN1, -Speed);
-		analogWrite(MA_IN2, 0);
+		analogWrite(MA_IN1, 0);
+		analogWrite(MA_IN2, -Speed);
 	}
 	else
 	{
-		analogWrite(MA_IN1, 0);
-		analogWrite(MA_IN2, Speed);
+		analogWrite(MA_IN1, Speed);
+		analogWrite(MA_IN2, 0);
 	}
 }
 
@@ -87,13 +91,13 @@ void Motor_MB(short Speed)
 	}
 	if (Speed < 0)
 	{
-		analogWrite(MB_IN1, -Speed);
-		analogWrite(MB_IN2, 0);
+		analogWrite(MB_IN1, 0);
+		analogWrite(MB_IN2, -Speed);
 	}
 	else
 	{
-		analogWrite(MB_IN1, 0);
-		analogWrite(MB_IN2, Speed);
+		analogWrite(MB_IN1, Speed);
+		analogWrite(MB_IN2, 0);
 	}
 }
 
@@ -123,6 +127,8 @@ void Motor(void)
 }
 
 #define MotorStop(void) Motor(void)
+#define x Motor()
+#define X Motor()
 
 //* --------------------------------
 //` ================================================================ #ffffff
